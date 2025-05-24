@@ -11,15 +11,18 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UserCrudController extends AbstractCrudController
 {
 
     private Security $security;
+    private UserPasswordHasherInterface $passwordHasher;
 
-    public function __construct(Security $security)
+    public function __construct(Security $security, UserPasswordHasherInterface $passwordHasher)
     {
         $this->security = $security;
+        $this->passwordHasher = $passwordHasher;
     }
     public static function getEntityFqcn(): string
     {
@@ -64,6 +67,8 @@ class UserCrudController extends AbstractCrudController
         $admin = $this->security->getUser();
         if ($admin instanceof User && $admin !== $entityInstance) {
             $admin->addUser($entityInstance);
+            $hashedPassword = $this->passwordHasher->hashPassword($entityInstance, $entityInstance->getPassword());
+            $entityInstance->setPassword($hashedPassword);
         }
 
         $entityManager->persist($entityInstance);

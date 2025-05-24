@@ -5,12 +5,43 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                }
+                header {
+                    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+                    padding: 20px;
+                    text-align: center;
+                    color: white;
+                }
+                footer {
+                    background: #333;
+                    color: white;
+                    text-align: center;
+                    padding: 10px;
+                    margin-top: 20px;
+                }
+            </style>
         {% endblock %}
 
         {% block javascripts %}
         {% endblock %}
     </head>
     <body>
+    <header style="background: linear-gradient(135deg, #ff9a9e, #fad0c4); padding: 20px; text-align: center; color: white;">
+        <h1>LoveTeller</h1>
+        <p>Recevez chaque jour un message d'amour de vos proches ❤️</p>
+    </header>
         {% block body %}{% endblock %}
+    <footer style="background: #333; color: white; text-align: center; padding: 10px; margin-top: 20px;">
+        <p>&copy; {{ "now"|date("Y") }} LoveTeller. Tous droits réservés.</p>
+        <p>Partagez l'amour, un message à la fois.</p>
+    </footer>
     </body>
 </html>
