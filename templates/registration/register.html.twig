@@ -3,76 +3,7 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <style>
-        .register-container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-            align-self: center;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .register-container h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .btn {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .btn-primary {
-            margin-bottom: 20px;
-            background-color: #ff6b6b;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #ff4c4c;
-        }
-
-        .btn-secondary {
-            align-self: center;
-            max-width: 100px;
-            background-color: #ccc;
-            color: #333;
-        }
-
-        .btn-secondary:hover {
-            background-color: #bbb;
-        }
-
-        .alert {
-            color: white;
-            background-color: #ff6b6b;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-    </style>
-
-    <div class="register-container">
+    <div class="login-container">
         {% for flash_error in app.flashes('verify_email_error') %}
             <div class="alert">{{ flash_error }}</div>
         {% endfor %}

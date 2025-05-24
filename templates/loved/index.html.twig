@@ -3,52 +3,6 @@
 {% block title %}Message d'amour du jour{% endblock %}
 
 {% block body %}
-    <style>
-        .card {
-            margin: 2em auto;
-            max-width: 600px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-            color: #333;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-        }
-
-        .card h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .logout-btn {
-            background-color: #ff6b6b;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .logout-btn:hover {
-            background-color: #ff4c4c;
-        }
-    </style>
-
     <div class="card">
         <div class="header">
             <p>Connecté en tant que : <strong>{{ user_email }}</strong></p>
