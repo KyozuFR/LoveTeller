@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Message d'amour du jour{% endblock %}
+
+{% block body %}
+    <div class="card">
+        <div class="header">
+            <p>Connecté en tant que : <strong>{{ user_email }}</strong></p>
+            <a href="/logout" class="logout-btn">Se déconnecter</a>
+        </div>
+        <h1>Message du jour</h1>
+        <p>{{ lovemessage }}</p>
+    </div>
+{% endblock %}
